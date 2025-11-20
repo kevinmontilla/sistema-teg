@@ -1,100 +1,81 @@
-🗄️ Creación y configuración de la Base de Datos
+# Sistema de Gestión de Trabajos Especiales de Grado (TEG)
 
-El proyecto utiliza una base de datos llamada:
+Plataforma de escritorio desarrollada en **Java** para la gestión administrativa de los Trabajos Especiales de Grado (TEG). Permite a los usuarios con rol de administrador realizar un control completo sobre los TEGs, desde su registro inicial hasta la consulta de éstos.
 
-teg
+---
 
-La estructura completa de tablas (acceso y registro) se encuentra en el archivo:
+## Características Principales
 
-/database/teg.sql
+- **Control de Acceso (Login):** Autenticación de usuarios con roles definidos para acceso seguro.
+- **Gestión CRUD:** Funcionalidades completas para **Registrar, Consultar, Editar y Eliminar** proyectos TEG.
+- **Gestión de Datos Académicos:** Almacenamiento organizado de títulos, autores, asesores, resúmenes, líneas de investigación, etc.
+- **Persistencia de Datos:** Conexión y almacenamiento de la información en una base de datos **MySQL**.
+- **Interfaz de Usuario:** Aplicación de escritorio estable y funcional.
 
-incluido en este repositorio. Este archivo contiene todas las instrucciones necesarias para crear las tablas y cargar los datos iniciales.
+## Tecnologías Utilizadas
 
+### Backend y Lógica
+* ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) **Java:** Lenguaje principal de desarrollo.
+* **JDBC:** Uso de la API Java Database Connectivity para la conexión con la base de datos.
 
-1️⃣ Crear la base de datos
+### Base de Datos
+* ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) **MySQL:** Motor de base de datos relacional para el almacenamiento persistente.
 
-Antes de importar el archivo .sql, crea la base de datos vacía:
+## Estructura del Proyecto
 
-CREATE DATABASE teg
-CHARACTER SET utf8mb4
-COLLATE utf8mb4_general_ci;
+```text
+sistema-teg/
+├── database/        # Archivo teg.sql con la estructura de la base de datos
+├── lib/             # Librerías (Drivers JDBC, etc.)
+├── nbproject/       # Configuraciones de NetBeans
+├── src/             # Código fuente en Java (.java)
+├── .gitignore       # Archivo de ignorados de Git
+└── README.md        # Documentación del sistema
+```
 
+## Instrucciones de Instalación
+Para poder correr este sistema, necesitas tener instalado JDK (Java Development Kit) y un gestor de bases de datos (como XAMPP/WAMP para MySQL).
 
-2️⃣ Importar el archivo SQL
+### 1. Configuración de la Base de Datos
+Crea una base de datos vacía llamada teg.
 
-El archivo teg.sql incluye:
+Importa el script teg.sql que se encuentra en la carpeta /database a tu instancia de MySQL.
 
-La tabla acceso
+### 2. Configuración de Conexión
+El archivo de configuración de la conexión a la base de datos se encuentra en: /src/config/Conexion.java.
 
-La tabla registro
+Asegúrate de que los valores coincidan con tu configuración local (usuario y contraseña de MySQL):
 
-El usuario inicial (admin / 1234)
-
-La estructura completa del sistema
-
-Para importarlo:
-
-Opción A: phpMyAdmin
-
-Seleccionar la base de datos teg.
-
-Abrir la pestaña Importar.
-
-Seleccionar el archivo teg.sql.
-
-Ejecutar.
-
-
-3️⃣ Tablas incluidas en el proyecto
-Tabla acceso
-
-Almacena los usuarios que pueden iniciar sesión en la aplicación Java.
-
-Campos principales:
-
-usuario → nombre de acceso
-
-clave → contraseña del sistema
-
-tipo → rol del usuario (por ejemplo: administrador)
-
-El archivo SQL incluye el usuario inicial:
-
-usuario: admin
-clave: 1234
-
-Esta cuenta está pensada como acceso predeterminado para el sistema.
-Los administradores pueden crear más usuarios desde la aplicación.
-
-Tabla registro
-
-Contiene toda la información relacionada con los TEG:
-
-Título
-
-Autor(es)
-
-Tutor(es)
-
-Línea o área de investigación
-
-Resumen
-
-Año de presentación
-
-Otros datos relevantes
-
-Toda la gestión de trabajos de grado que aparece en la aplicación depende de esta tabla.
-
-
-4️⃣ Configuración de conexión en el proyecto
-
-El archivo con los datos de conexión se encuentra en:
-
-/src/config/Conexion.java
-
-Valores recomendados:
+```text
+Java
 
 private static final String URL = "jdbc:mysql://localhost:3306/teg";
-private static final String USER = "root";       // o el usuario que uses
-private static final String PASSWORD = "";       // tu contraseña de MySQL
+private static final String USER = "root"; // Tu usuario de MySQL
+private static final String PASSWORD = ""; // Tu contraseña de MySQL
+```
+
+## Instrucciones de Ejecución
+Para correr este programa en tu computadora, necesitas tener instalado el JDK (Java Development Kit).
+
+### Opción A: Desde un IDE (Recomendado)
+
+Abre NetBeans, IntelliJ o Eclipse.
+
+Selecciona "File" > "Open Project".
+
+Navega a la carpeta donde clonaste este repositorio y ábrelo.
+
+Ejecuta el archivo principal (Main.java o similar dentro de src).
+
+#### Credenciales Iniciales (incluidas en el .sql):
+
+- **Usuario:** admin
+
+- **Clave:** 1234
+
+## Historial del Proyecto
+Fecha de Realización: Abril del 2024.
+
+Tipo: Sistema de Gestión (Trabajo Especial de Grado).
+
+Estado: 🟢 Finalizado.
