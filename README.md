@@ -81,3 +81,10 @@ Fecha de Realización: Abril del 2024.
 Tipo: Sistema de Gestión (Trabajo Especial de Grado).
 
 Estado: 🟢 Finalizado.
+
+## Autores
+
+<p style="font-size: 22px; font-family: 'Georgia', serif; line-height: 1.6;">
+  • <strong>Carlos Luna</strong><br>
+  • <strong>Kevin Montilla</strong>
+</p>
