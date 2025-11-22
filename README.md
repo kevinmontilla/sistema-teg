@@ -28,6 +28,7 @@ sistema-teg/
 ├── database/        # Archivo teg.sql con la estructura de la base de datos
 ├── lib/             # Librerías (Drivers JDBC, etc.)
 ├── nbproject/       # Configuraciones de NetBeans
+├── screenshots/     # Capturas de pantalla para la documentación (README)
 ├── src/             # Código fuente en Java (.java)
 ├── .gitignore       # Archivo de ignorados de Git
 └── README.md        # Documentación del sistema
