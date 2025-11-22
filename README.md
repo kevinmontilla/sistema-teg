@@ -73,6 +73,8 @@ Ejecuta el archivo principal (Main.java o similar dentro de src).
 
 - **Clave:** 1234
 
+<img src="screenshots/Login.png" alt="Interfaz Principal" width="700"/>
+
 ## Historial del Proyecto
 Fecha de Realización: Abril del 2024.
 
